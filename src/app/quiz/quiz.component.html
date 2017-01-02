@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12" style="text-align: center">
+      <span class="field-title" style="font-size: 26pt;">Quiz</span>
+    </div>
+  </div>
+  <div class="row" (click)="adicionarPergunta()">
+    <span><i class="material-icons">&#xE3CD;</i></span>
+  </div>
+  <div class="row form-group" *ngFor="let p of quiz.itensQuiz; let i = index">
+    <div class="col-xs-10">
+      <input type="text" class="form-control" name="pergunta" [(ngModel)]="p.pergunta" placeholder="Digite a pergunta">
+    </div>
+    <div class="col-xs-2" (click)="deletarPerguntar(i)">
+      <i class="material-icons">&#xE872;</i>
+    </div>
+  </div>
+  <div class="row">
+    <button type="button" class="btn pull-right" (click)="criarQuiz()">Cadastrar</button>
+  </div>
+</div>

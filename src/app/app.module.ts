@@ -9,7 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ResenhasComponent } from './resenhas/resenhas.component';
 import { SimpleTinyComponent } from './components/tinymce/tinymce.component';
-import { CriarResenhaComponent } from './resenhas/criar-resenha.component'; 
+import { CriarResenhaComponent } from './resenhas/criar-resenha.component';
+import { QuizComponent } from './quiz/quiz.component'; 
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CriarResenhaComponent } from './resenhas/criar-resenha.component';
     HomeComponent,
     ResenhasComponent,
     SimpleTinyComponent,
-    CriarResenhaComponent
+    CriarResenhaComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

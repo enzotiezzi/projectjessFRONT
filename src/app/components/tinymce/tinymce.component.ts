@@ -15,7 +15,7 @@ export class SimpleTinyComponent implements AfterViewInit, OnDestroy {
     @Input() elementId: String;
     @Output() onEditorKeyup = new EventEmitter<any>();
 
-    editor;
+    private editor;
 
     ngAfterViewInit() {
         tinymce.init({
@@ -31,5 +31,9 @@ export class SimpleTinyComponent implements AfterViewInit, OnDestroy {
 
     ngOnDestroy() {
         tinymce.remove(this.editor);
+    }
+
+    public getContent(): any {
+        return this.editor.getContent();
     }
 }
