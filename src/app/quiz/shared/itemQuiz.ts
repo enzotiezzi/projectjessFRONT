@@ -1,9 +1,11 @@
 export class ItemQuiz{
+    _id: string;
+    idQuiz: string;
     pergunta: string;
-    resposta: string;
 
     constructor(){
+        this.idQuiz = "";
+        this._id = "";
         this.pergunta = "";
-        this.resposta = "";
     }
 }

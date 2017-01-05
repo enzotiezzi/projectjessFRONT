@@ -3,12 +3,13 @@ import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../../environments/environment';
 
-import { Quiz } from './Quiz';
+import { Quiz } from './quiz';
+import { Resposta } from './resposta';
 
 @Injectable()
 export class QuizService {
 
-    private URL: string = `${environment.url}/quiz`;
+    private URL: string = `${environment.url}/apis/quiz`;
     private headers: Headers = new Headers({ 'Content-Type': 'application/json' });
 
     constructor(private http: Http) { }
@@ -19,6 +20,24 @@ export class QuizService {
             .post(url, quiz)
             .map(r => r.status >= 200 && r.status < 300)
             .catch(this.handleError);
+    }
+
+    public buscarQuiz(id: string): Observable<Quiz> {
+        const url = `${this.URL}/quiz/${id}`;
+
+        return this.http
+            .get(url)
+            .map(r => r.json() as Quiz)
+            .catch(this.handleError);
+    }
+
+    public responderQuiz(respostas: Resposta[]): Observable<boolean> {
+        const url = `${this.URL}/responder`;
+
+        return this.http
+        .post(url, { respostas: respostas }, { headers: this.headers })
+        .map(r => r.status >= 200 && r.status < 300)
+        .catch(this.handleError);
     }
 
     private handleError(error: Response | any) {

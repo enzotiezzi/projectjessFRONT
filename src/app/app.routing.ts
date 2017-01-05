@@ -3,10 +3,15 @@ import { HomeComponent } from './home/home.component'
 import { ResenhasComponent } from './resenhas/resenhas.component';
 import { CriarResenhaComponent } from './resenhas/criar-resenha.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { QuizResponderComponent } from './quiz/quiz-responder.component';
+
+import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'resenhas', component: ResenhasComponent},
     { path: 'resenhas/criar', component: CriarResenhaComponent },
-    { path: 'quiz/criar',  component: QuizComponent }
+    { path: 'quiz/criar',  component: QuizComponent },
+    { path: 'quiz/responder/:id', component: QuizResponderComponent },
+    { path: '**', component: PageNotFoundComponent }
 ]

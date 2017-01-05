@@ -10,7 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { ResenhasComponent } from './resenhas/resenhas.component';
 import { SimpleTinyComponent } from './components/tinymce/tinymce.component';
 import { CriarResenhaComponent } from './resenhas/criar-resenha.component';
-import { QuizComponent } from './quiz/quiz.component'; 
+import { QuizComponent } from './quiz/quiz.component';
+import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
+import { QuizResponderComponent } from './quiz/quiz-responder.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { QuizComponent } from './quiz/quiz.component';
     ResenhasComponent,
     SimpleTinyComponent,
     CriarResenhaComponent,
-    QuizComponent
+    QuizComponent,
+    PageNotFoundComponent,
+    QuizResponderComponent
   ],
   imports: [
     BrowserModule,

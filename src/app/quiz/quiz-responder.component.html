@@ -1,0 +1,33 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-12" style="text-align: center">
+        <span class="field-title" style="font-size: 26pt;">Quiz</span>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <div>Digite seu insta/E-mail</div>
+                <input class="form-control" type="text" name="identificacao" [(ngModel)]="identificacao">
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngFor="let item of quiz.itensQuiz; let i = index">
+        <div class="form-group">
+            <div class="col-xs-12">
+            <span>{{ item.pergunta }}</span>
+            </div>
+
+            <div class="col-xs-12" *ngIf="respostas[i] != undefined">
+                <input class="form-control" type="text" name="resposta" [(ngModel)]="respostas[i].resposta">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <button type="button" class="btn pull-right" (click)="responderQuiz()">Responder</button>
+    </div>
+</div>
