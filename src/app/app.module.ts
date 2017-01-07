@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { QuizResponderComponent } from './quiz/quiz-responder.component';
 import { ResenhaItemComponent } from './components/resenha-item/resenha-item.component';
 import { ResenhaComponent } from './resenhas/resenha.component';
+import { MdlModule } from 'angular2-mdl';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ResenhaComponent } from './resenhas/resenha.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    MdlModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
