@@ -5,40 +5,54 @@
 
     <div class="row">
         <div class="col-xs-12 col-md-6 form-group">
+            <label for="titulo" class="field-title">Foto do livro</label>
+            <input #foto type="file" class="form-control" id="foto" name="foto" required placeholder="Digite o nome do livro">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-md-6 form-group">
             <label for="titulo" class="field-title">Título</label>
-            <input type="text" class="form-control" id="titulo" required placeholder="Digite o nome do livro">
+            <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="resenha.titulo" required placeholder="Digite o nome do livro">
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs-12 col-md-6 form-group">
             <label for="autor" class="field-title">Autor(a)</label>
-            <input type="text" class="form-control" id="autor" required placeholder="Digite o nome do autor(a)">
+            <input type="text" class="form-control" id="autor" name="autor" [(ngModel)]="resenha.autor" required placeholder="Digite o nome do autor(a)">
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs-12 col-md-6 form-group">
             <label for="ediora" class="field-title">Editora</label>
-            <input type="text" class="form-control" id="editora" required placeholder="Digite o nome da editora">
+            <input type="text" class="form-control" id="editora" name="editora" [(ngModel)]="resenha.editora" required placeholder="Digite o nome da editora">
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs-12 col-md-6 form-group">
             <label for="paginas" class="field-title">Quantidade de páginas</label>
-            <input type="number" class="form-control" id="paginas" required placeholder="Digite a quantidade de páginas">
+            <input type="number" class="form-control" id="paginas" name="paginas" [(ngModel)]="resenha.quantidadePaginas" required placeholder="Digite a quantidade de páginas">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-md-6 form-group">
+            <label for="paginas" class="field-title">Nota</label>
+            <input type="number" class="form-control" id="nota" name="nota" [(ngModel)]="resenha.nota" required placeholder="Digite a nota">
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs-12 form-group">
             <label for="resenha" class="field-title">Resenha</label>
-            <simple-tiny [elementId]="'my-tiny'"></simple-tiny>
+            <simple-tiny #tiny [elementId]="'my-tiny'"></simple-tiny>
         </div>
     </div>
 
     <div class="form-group pull-right">
-        <input type="button" id="btnCriar" value="Criar" class="btn btn-default">
+        <input type="button" id="btnCriar" value="Criar" class="btn btn-default" (click)="criarResenha()">
     </div>
 </div>

@@ -1,3 +1,3 @@
-<p>
-  resenhas works!
-</p>
+<div style="margin-top: 10px;">
+    <resenha-item ng-if="resenhas.length > 0" *ngFor="let r of resenhas" [resenha]="r"></resenha-item>
+</div>
