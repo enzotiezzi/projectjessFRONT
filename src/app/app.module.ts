@@ -14,6 +14,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { QuizResponderComponent } from './quiz/quiz-responder.component';
 import { ResenhaItemComponent } from './components/resenha-item/resenha-item.component';
+import { ResenhaComponent } from './resenhas/resenha.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ResenhaItemComponent } from './components/resenha-item/resenha-item.com
     QuizComponent,
     PageNotFoundComponent,
     QuizResponderComponent,
-    ResenhaItemComponent
+    ResenhaItemComponent,
+    ResenhaComponent
   ],
   imports: [
     BrowserModule,

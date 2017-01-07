@@ -11,7 +11,8 @@ body{
 }
 
 .social-media {
-    background-color: white;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
 }
 
 .instagram-icon{

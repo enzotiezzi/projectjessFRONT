@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="row" style="margin-bottom: 20px">
+        <div class="col-xs-12">
+            <div class="title" style="text-align: center;">{{resenha.titulo}}</div>
+        </div>
+    </div>
+    
+    <div class="col-xs-12 col-md-3" style="padding: 5px;">
+        <div class="resenha-block">
+            <div>
+                <img [src]="resenha.linkImagem" style="width: 160px; height: 120px">
+            </div>
+
+            <div>
+                <span class="book-description">Autor: </span>
+                <span>{{ resenha.autor }}</span>
+            </div>
+
+            <div>
+                <span class="book-description">Editora: </span>
+                <span>{{ resenha.editora }}</span>
+            </div>
+
+            <div>
+                <span class="book-description">Páginas: </span>
+                <span>{{ resenha.quantidadePaginas }}</span>
+            </div>
+
+            <div>
+                <span class="book-description">Nota: </span>
+                <span>{{ resenha.nota }}/5</span>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="safeHTML != null" class="col-xs-12 col-md-9" style="padding: 5px;">
+        <div class="resenha-block" [innerHTML]="safeHTML" style="padding: 5px;"></div>
+    </div>
+</div>

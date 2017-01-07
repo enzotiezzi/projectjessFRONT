@@ -1,4 +1,5 @@
 export class Resenha {
+    _id: string;
     titulo: string;
     autor: string;
     editora: string;

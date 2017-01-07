@@ -23,9 +23,18 @@ export class ResenhaService {
         const url = `${this.URL}/listar`;
 
         return this.http
-        .get(url)
-        .map(r => r.json() as Resenha[])
-        .catch(this.handleError);
+            .get(url)
+            .map(r => r.json() as Resenha[])
+            .catch(this.handleError);
+    }
+
+    public buscarResenha(idResenha: string): Observable<Resenha> {
+        const url = `${this.URL}/resenha/${idResenha}`;
+
+        return this.http
+            .get(url)
+            .map(r => r.json() as Resenha)
+            .catch(this.handleError);
     }
 
     private handleError(error: Response | any) {
