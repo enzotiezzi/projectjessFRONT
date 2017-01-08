@@ -53,8 +53,10 @@ export class QuizService {
     }
 
     public buscarQuestionario(id: string): Observable<Questionario[]> {
-        const url = `${this.URL}/respostas/${id}`;
+        while(id.indexOf('/') != -1)
+            id = id.replace('/','@-');
 
+        const url = `${this.URL}/respostas/${encodeURIComponent(id)}`;
         return this.http
             .get(url)
             .map(r => r.json() as Questionario[])

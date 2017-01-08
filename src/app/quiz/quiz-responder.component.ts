@@ -46,6 +46,7 @@ export class QuizResponderComponent implements OnInit {
             alert("Digite seu insta ou E-mail");
         else{
             if(confirm("Tem certeza?")){
+                this.identificacao = this.identificacao.replace('/', '');
                 this.respostas.forEach(element => {
                 element.identificacao = this.identificacao;
             });

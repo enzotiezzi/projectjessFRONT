@@ -43,7 +43,6 @@ export class QuestionarioComponent implements OnInit {
       this.quizService
         .buscarQuestionario(id)
         .subscribe(q => {
-          console.log(q);
           this.questionarios[id] = q;
         });
     }
