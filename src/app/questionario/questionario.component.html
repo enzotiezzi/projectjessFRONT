@@ -1,0 +1,10 @@
+<div class="row" *ngFor="let p of participantes">
+  <accordion (toggleView)="buscarQuestionario($event)" [titulo]='p'>
+    <div *ngIf="questionarios[p] != undefined">
+      <div  class="row" *ngFor="let q of questionarios[p]" style="padding-left: 10px">
+        <div><span style="font-weight: bold">Pergunta:</span> {{ q.idItemQuiz.pergunta }}</div>
+        <div><span style="font-weight: bold">Resposta:</span> {{ q.resposta }}</div>
+      </div>
+    </div>
+  </accordion>
+</div>

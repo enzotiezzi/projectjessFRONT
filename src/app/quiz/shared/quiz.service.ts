@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment';
 
 import { Quiz } from './quiz';
 import { Resposta } from './resposta';
+import { Questionario } from '../../questionario/shared/questionario';
 
 @Injectable()
 export class QuizService {
@@ -35,9 +36,29 @@ export class QuizService {
         const url = `${this.URL}/responder`;
 
         return this.http
-        .post(url, { respostas: respostas }, { headers: this.headers })
-        .map(r => r.status >= 200 && r.status < 300)
-        .catch(this.handleError);
+            .post(url, { respostas: respostas }, { headers: this.headers })
+            .map(r => r.status >= 200 && r.status < 300)
+            .catch(this.handleError);
+    }
+
+    public buscarParticipantes(id: string): Observable<string[]> {
+        const url = `${this.URL}/participantes/${id}`;
+
+        console.log(url);
+
+        return this.http
+            .get(url)
+            .map(r => r.json() as string[])
+            .catch(this.handleError);
+    }
+
+    public buscarQuestionario(id: string): Observable<Questionario[]> {
+        const url = `${this.URL}/respostas/${id}`;
+
+        return this.http
+            .get(url)
+            .map(r => r.json() as Questionario[])
+            .catch(this.handleError);
     }
 
     private handleError(error: Response | any) {

@@ -16,6 +16,8 @@ import { QuizResponderComponent } from './quiz/quiz-responder.component';
 import { ResenhaItemComponent } from './components/resenha-item/resenha-item.component';
 import { ResenhaComponent } from './resenhas/resenha.component';
 import { MdlModule } from 'angular2-mdl';
+import { QuestionarioComponent } from './questionario/questionario.component';
+import { AccordionComponent } from './components/accordion/accordion.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { MdlModule } from 'angular2-mdl';
     PageNotFoundComponent,
     QuizResponderComponent,
     ResenhaItemComponent,
-    ResenhaComponent
+    ResenhaComponent,
+    QuestionarioComponent,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,

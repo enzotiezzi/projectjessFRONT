@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row title-row" (click)="toggle()">
+        <div class="col-xs-12">
+            <span>{{ titulo }}</span>
+            <i class="material-icons pull-right">&#xE313;</i>
+        </div>
+    </div>
+    <div *ngIf="aberto">
+        <ng-content></ng-content>
+    </div>
+</div>

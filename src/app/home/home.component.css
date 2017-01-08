@@ -2,3 +2,23 @@
     background: url('../../assets/rsz_estante.jpg') no-repeat;
     height: 176px;
 }
+
+.card-quiz{
+    background: url('../../assets/rsz_quiz.jpg') no-repeat;
+    height: 176px;
+}
+
+.card-spacing{
+    margin-bottom: 10px;
+}
+
+@media(min-width: 320px){
+    .card-size{
+        width: 310px;
+    }
+
+    .mobile-padding{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
